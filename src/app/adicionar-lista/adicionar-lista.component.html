@@ -1,0 +1,25 @@
+<div class="max-w-sm mx-auto">
+  <!-- Buscar Projeto -->
+  <div class="mb-4">
+    <label for="buscar" class="block mb-2">Buscar:</label>
+    <div class="flex">
+      <input id="buscar" type="text" class="border border-gray-300 rounded-l py-2 px-4" [formControl]="buscarLista">
+      <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r" (click)="getListPorId()">Buscar</button>
+    </div>
+  </div>
+
+  <!-- Formulário para Adicionar Projeto -->
+  <form [formGroup]="novoListaForm" (ngSubmit)="adicionarLista()">
+    <div class="mb-4">
+      <label for="lista_nome" class="block mb-2">Nome do Projeto:</label>
+      <input id="lista_nome" type="text" formControlName="lista_nome" class="border border-gray-300 rounded py-2 px-4 w-full">
+    </div>
+
+    <div class="mb-4">
+      <label for="lista_compartilhada_descricao" class="block mb-2">Descrição do Projeto:</label>
+      <input id="lista_compartilhada_descricao" type="text" formControlName="lista_compartilhada_descricao" class="border border-gray-300 rounded py-2 px-4 w-full">
+    </div>
+
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Adicionar Lista</button>
+  </form>
+</div>
